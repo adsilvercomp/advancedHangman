@@ -20,8 +20,12 @@ var blanksCorrectArr = [];
 var guessesLeft = 10;
 
 
-console.log(firstWord.lettersArr);
+// console.log(firstWord.lettersArr);
 //inquirer should prompt user for guess.
+
+var askQuestion = function(){
+if(guessesLeft > 0 ){
+
 inquirer.prompt([
     {
         name: "guess",
@@ -46,7 +50,7 @@ inquirer.prompt([
 
 
 
-        //check if the letter is in the word
+       
         for (var i = 0; i < firstWord.lettersArr.length; i++) {
             //if the user's guess === a letter in the word at a particular iteration
             //print it in the blanksCorrectArr at the same iteration.
@@ -71,41 +75,19 @@ inquirer.prompt([
 
     checkLetter();
 
-    // for(var i=0;i<firstWord.lettersArr.length; i++){
-    //     var iterate= firstWord.lettersArr[i];
-    //     if(response.guess===iterate){
-    //         correctArr.push(response.guess);
-    //         console.log(correctArr);
-    //     }else{
-    //         wrongArr.push(response.guess);
-    //         guessesLeft--;
-    //         console.log(guessesLeft);
-    //         console.log(wrongArr);
-    //     }
-    // }
-
-
-    //     //loop through the length of lettersArr
-    //     for(var i; i<lettersArr.length;i++){
-    //         //if userGuess is equal to any of the letters in the letters array, push those letters to the correct array.
-    //         if("guess".toLowerCase===lettersArr[i]){
-    //             var position= 
-    //             correctArr.push(name);
-    //         }else{
-    //             //push the wrong guess to the wrong array.
-    //             wrongArr.push(name)
-    //             //decrement the number of guesses that the user has left. 
-    //             Letters.guessesLeft--;
-    //        }
-
-    //    }
-
+   
+    askQuestion();
 
 });
 
 
+}else{
+    console.log("game over");
+}
 
+};
 
+askQuestion();
 
 
 
